@@ -71,6 +71,7 @@ namespace VanguardToggler
             {
                 infoText.Text = "Please run the software with administrator privileges!";
                 toggler.IsEnabled = false;
+                trayToggler.IsEnabled = false;
                 killVanguardButton.IsEnabled = false;
                 restartButton.IsEnabled = false;
             }
@@ -88,6 +89,12 @@ namespace VanguardToggler
             {
                 Process.Start(new ProcessStartInfo("cmd", $"/c sc config vgc start= demand") { CreateNoWindow = true });
                 Process.Start(new ProcessStartInfo("cmd", $"/c sc config vgk start= system") { CreateNoWindow = true });
+
+                if (trayToggler.IsChecked == false)
+                {
+                    trayToggler.IsChecked = true;
+                }
+
                 infoText.Text = "Vanguard enabled, restart is required.";
             }
         }
@@ -126,6 +133,11 @@ namespace VanguardToggler
             else
             {
                 File.Move(@"C:\Program Files\Riot Vanguard\vgtray.exe", @"C:\Program Files\Riot Vanguard\vgtray1.exe");
+
+                if (toggler.IsChecked == true)
+                {
+                    toggler.IsChecked = false;
+                }
             }
         }
 

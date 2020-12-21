@@ -1,0 +1,70 @@
+﻿<Window x:Class="VanguardToggler.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VanguardToggler"
+        mc:Ignorable="d"
+        Title="Vanguard Ducker" Height="600" Width="1000" ResizeMode="NoResize" Icon="/jpgicon.jpg"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid>
+        <Image Margin="10,77,0,0" Stretch="Fill" Source="jpgicon.jpg" Height="200" VerticalAlignment="Top" HorizontalAlignment="Left" Width="231"/>
+
+        <TextBlock
+            Style="{StaticResource MaterialDesignHeadline4TextBlock}" Text="Vanguard Ducker" TextAlignment="Center" RenderTransformOrigin="0.5,0.5" Margin="240,10,284,0" Height="41" VerticalAlignment="Top" FontSize="36">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="10"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+
+        <ToggleButton x:Name="toggler"
+            Style="{StaticResource MaterialDesignSwitchToggleButton}"
+            ToolTip="MaterialDesignSwitchLightToggleButton"
+            IsChecked="True" Margin="541,177,0,0" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="49" Background="#FFD1373A" Checked="toggler_Checked" Unchecked="toggler_Unchecked" />
+
+        <TextBlock
+            Style="{StaticResource MaterialDesignBody1TextBlock}" Margin="397,173,0,0" Height="32" VerticalAlignment="Top" HorizontalAlignment="Left" Width="139" FontSize="20"><Run Language="hu-hu" Text="Run at startup:"/></TextBlock>
+
+        <TextBlock
+            Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0,0,10,10" FontStyle="Italic" Text="Because we don't want this motherducker &quot;anticheat&quot; to block our drivers. Spying on us is already enough. :)" HorizontalAlignment="Right" Width="656" Height="20" VerticalAlignment="Bottom" FontSize="14"/>
+        <Border BorderThickness="5" BorderBrush="#FF5B5B5B" HorizontalAlignment="Right" Margin="0,61,263,238" Width="2"/>
+
+        <TextBlock
+            Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0,76,60,0" FontStyle="Normal" Height="83" VerticalAlignment="Top" HorizontalAlignment="Right" Width="190" FontSize="16"><Run Text="Don't forget to support "/><Run Text="my"/><LineBreak/><Run Text="work by giving "/><Run Text="me"/><Run Text=" a star"/><LineBreak/><Run Text="on GitHub"/><Run Text=" "/><Run Text="or by "/><Run Text="buying"/><LineBreak/><Run Text="me a coffee"/><Run Text="!"/><Run Language="hu-hu" Text=" ☕"/></TextBlock>
+        <TextBlock x:Name="ikleventeLink"
+            Style="{StaticResource MaterialDesignTextBlock}" Margin="0,166,136,0" FontSize="12" HorizontalAlignment="Right" Width="114" Height="22" VerticalAlignment="Top"><Hyperlink Click="Hyperlink_Click">github.com/iklevente</Hyperlink></TextBlock>
+
+        <TextBlock
+            Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0,220,76,0" FontStyle="Italic" HorizontalAlignment="Right" Width="174" Height="80" VerticalAlignment="Top"><Run Text="Hand-crafted by iklevente"/><LineBreak/><Run Text="with "/><Run Text="pleasure"/><Run Text=" and"/><Run Text=" "/><Run Text="100%"/><LineBreak/><Run Text="open source"/><Run Text=" "/><Run Text="intentions."/><LineBreak/><Run Text="Free to use for any purpose,"/><Run/><LineBreak/><Run Text="f"/><Run Text="orever."/><LineBreak/><Run/></TextBlock>
+        <TextBlock x:Name="infoText"
+            Style="{StaticResource MaterialDesignBody1TextBlock}" x:FieldModifier="public" Margin="0,454,0,0" Height="32" VerticalAlignment="Top" HorizontalAlignment="Center" Width="580" FontSize="18" TextAlignment="Center" Text="infoText"/>
+        <TextBlock x:Name="ikleventeDonateLink"
+            Style="{StaticResource MaterialDesignTextBlock}" Margin="0,193,137,0" FontSize="12" HorizontalAlignment="Right" Width="113" Height="21" VerticalAlignment="Top"><Hyperlink Click="Hyperlink_Click2"><Run Text="paypal.me/iklevi"/></Hyperlink></TextBlock>
+
+        <Button x:Name="restartButton"
+            Style="{StaticResource MaterialDesignRaisedLightButton}"
+            Width="100"
+            ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="500,377,0,0" Background="#B28CFF03" Content="Restart PC" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Click="restartButton_Click"/>
+        <Button x:Name="killVanguardButton"
+            Style="{StaticResource MaterialDesignRaisedLightButton}"
+            ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="0,377,512,0" Background="#FFD1373A" Content="Kill Vanguard" Height="32" VerticalAlignment="Top" HorizontalAlignment="Right" Width="121" Click="killVanguardButton_Click"/>
+        <TextBlock
+            Style="{StaticResource MaterialDesignBody1TextBlock}" Margin="250,251,0,0" Height="32" VerticalAlignment="Top" HorizontalAlignment="Left" Width="286" FontSize="20" Text="Enable Vanguard tray at startup:"/>
+        <ToggleButton x:Name="trayToggler"
+            Style="{StaticResource MaterialDesignSwitchToggleButton}"
+            ToolTip="MaterialDesignSwitchLightToggleButton"
+            IsChecked="True" Margin="541,255,0,0" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="49" Background="#FFD1373A" Checked="trayToggler_Checked" Unchecked="trayToggler_Unchecked" />
+    </Grid>
+</Window>

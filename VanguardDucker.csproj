@@ -7,14 +7,22 @@
     <Platforms>AnyCPU;x64</Platforms>
     <ApplicationIcon>icon.ico</ApplicationIcon>
     <Authors>iklevente</Authors>
-    <Description>A Vanguard toggler with modern Material UI.</Description>
+    <Description>A Vanguard autorun toggler with modern Material UI.</Description>
     <Copyright>iklevente</Copyright>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/iklevente/VanguardDucker</PackageProjectUrl>
+    <PackageIcon>jpgicon.jpg</PackageIcon>
+    <RepositoryUrl>https://github.com/iklevente/VanguardDucker</RepositoryUrl>
+    <RepositoryType>Open Source</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="jpgicon.jpg" />
     <None Include="C:\Users\klevi\OneDrive\Desktop\Saved\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="Resources\Images\jpgicon.jpg">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>

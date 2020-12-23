@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 using System.Diagnostics;
 using System.IO;
 using System.ServiceProcess;
@@ -24,8 +11,8 @@ namespace VanguardToggler
     /// </summary>
     public partial class MainWindow : Window
     {
-        // This bool is required to fix a bug. Without it, it would start the ToggleButton_Checked/Unchecked void even though the user did not cick on it.
-        public bool isInitilaisationComplete = false;
+        // This bool is required to fix a bug. Without it, it would start the ToggleButton_Checked/Unchecked void after initialization even though the user did not cick on it.
+        public bool isInitializationComplete = false;
 
         public static string vanguardPath = @"C:\Program Files\Riot Vanguard";
 
@@ -76,16 +63,12 @@ namespace VanguardToggler
                 restartButton.IsEnabled = false;
             }
 
-            isInitilaisationComplete = true;
+            isInitializationComplete = true;
         }
 
         private void toggler_Checked(object sender, RoutedEventArgs e)
         {
-            if (isInitilaisationComplete == false)
-            {
-                // Wait for init complete
-            }
-            else
+            if (isInitializationComplete == true)
             {
                 Process.Start(new ProcessStartInfo("cmd", $"/c sc config vgc start= demand") { CreateNoWindow = true });
                 Process.Start(new ProcessStartInfo("cmd", $"/c sc config vgk start= system") { CreateNoWindow = true });
@@ -101,11 +84,7 @@ namespace VanguardToggler
 
         private void toggler_Unchecked(object sender, RoutedEventArgs e)
         {
-            if (isInitilaisationComplete == false)
-            {
-                // Wait for init complete
-            }
-            else
+            if (isInitializationComplete == true)
             {
                 Process.Start(new ProcessStartInfo("cmd", $"/c sc config vgc start= disabled") { CreateNoWindow = true });
                 Process.Start(new ProcessStartInfo("cmd", $"/c sc config vgk start= disabled") { CreateNoWindow = true });
@@ -115,22 +94,15 @@ namespace VanguardToggler
 
         private void trayToggler_Checked(object sender, RoutedEventArgs e)
         {
-            if (isInitilaisationComplete == false)
-            {
-                // Wait for init complete
-            }
-            else
+            if (isInitializationComplete == true)
             {
                 File.Move(@"C:\Program Files\Riot Vanguard\vgtray1.exe", @"C:\Program Files\Riot Vanguard\vgtray.exe");
+                infoText.Text = "Vanguard tray disabled.";
             }
         }
         private void trayToggler_Unchecked(object sender, RoutedEventArgs e)
         {
-            if (isInitilaisationComplete == false)
-            {
-                // Wait for init complete
-            }
-            else
+            if (isInitializationComplete == true)
             {
                 File.Move(@"C:\Program Files\Riot Vanguard\vgtray.exe", @"C:\Program Files\Riot Vanguard\vgtray1.exe");
 
@@ -138,6 +110,8 @@ namespace VanguardToggler
                 {
                     toggler.IsChecked = false;
                 }
+
+                infoText.Text = "Vanguard tray enabled.";
             }
         }
 

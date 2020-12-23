@@ -88,7 +88,7 @@ namespace VanguardToggler
             {
                 Process.Start(new ProcessStartInfo("cmd", $"/c sc config vgc start= disabled") { CreateNoWindow = true });
                 Process.Start(new ProcessStartInfo("cmd", $"/c sc config vgk start= disabled") { CreateNoWindow = true });
-                infoText.Text = "Vanguard will not start at boot.";
+                infoText.Text = "Vanguard disabled. It will not start at boot.";
             }
         }
 
@@ -97,7 +97,7 @@ namespace VanguardToggler
             if (isInitializationComplete == true)
             {
                 File.Move(@"C:\Program Files\Riot Vanguard\vgtray1.exe", @"C:\Program Files\Riot Vanguard\vgtray.exe");
-                infoText.Text = "Vanguard tray disabled.";
+                infoText.Text = "Vanguard tray enabled.";
             }
         }
         private void trayToggler_Unchecked(object sender, RoutedEventArgs e)
@@ -111,7 +111,7 @@ namespace VanguardToggler
                     toggler.IsChecked = false;
                 }
 
-                infoText.Text = "Vanguard tray enabled.";
+                infoText.Text = "Vanguard tray disabled.";
             }
         }
 

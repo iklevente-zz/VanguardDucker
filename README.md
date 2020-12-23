@@ -6,7 +6,7 @@
 Download the latest release from the [Releases](https://github.com/iklevente/VanguardDucker/releases/latest) page.
 
 ## Material Design UI:
-![Material Design GUI](https://raw.githubusercontent.com/iklevente/VanguardDucker/main/Resources/Images/MaterialDesignGUI.PNG)
+![Material Design GUI](https://raw.githubusercontent.com/iklevente/VanguardDucker/main/Resources/Images/UI.PNG)
 
 ## Buy me a coffee ☕:
 **[PayPal](https://www.paypal.me/iklevi)**

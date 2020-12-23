@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VanguardToggler"
         mc:Ignorable="d"
-        Title="Vanguard Ducker" Height="600" Width="1000" ResizeMode="NoResize" Icon="/jpgicon.jpg"
+        Title="Vanguard Ducker" Height="600" Width="1000" ResizeMode="NoResize"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -15,7 +15,6 @@
         Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"
         FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid>
-        <Image Margin="10,77,0,0" Stretch="Fill" Source="jpgicon.jpg" Height="200" VerticalAlignment="Top" HorizontalAlignment="Left" Width="231"/>
 
         <TextBlock
             Style="{StaticResource MaterialDesignHeadline4TextBlock}" Text="Vanguard Ducker" TextAlignment="Center" RenderTransformOrigin="0.5,0.5" Margin="240,10,284,0" Height="41" VerticalAlignment="Top" FontSize="36">
@@ -36,9 +35,6 @@
 
         <TextBlock
             Style="{StaticResource MaterialDesignBody1TextBlock}" Margin="397,173,0,0" Height="32" VerticalAlignment="Top" HorizontalAlignment="Left" Width="139" FontSize="20"><Run Language="hu-hu" Text="Run at startup:"/></TextBlock>
-
-        <TextBlock
-            Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0,0,10,10" FontStyle="Italic" Text="Because we don't want this motherducker &quot;anticheat&quot; to block our drivers. Spying on us is already enough. :)" HorizontalAlignment="Right" Width="656" Height="20" VerticalAlignment="Bottom" FontSize="14"/>
         <Border BorderThickness="5" BorderBrush="#FF5B5B5B" HorizontalAlignment="Right" Margin="0,61,263,238" Width="2"/>
 
         <TextBlock

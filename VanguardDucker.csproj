@@ -5,7 +5,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
     <Platforms>AnyCPU;x64</Platforms>
-    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <ApplicationIcon></ApplicationIcon>
     <Authors>iklevente</Authors>
     <Description>A Vanguard autorun toggler with modern Material UI.</Description>
     <Copyright>iklevente</Copyright>
@@ -22,10 +22,6 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-    <None Include="Resources\Images\jpgicon.jpg">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -34,7 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="jpgicon.jpg" />
+    <Folder Include="Resources\Images\" />
   </ItemGroup>
 
 </Project>

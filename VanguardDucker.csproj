@@ -5,7 +5,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
     <Platforms>AnyCPU;x64</Platforms>
-    <ApplicationIcon></ApplicationIcon>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
     <Authors>iklevente</Authors>
     <Description>A Vanguard autorun toggler with modern Material UI.</Description>
     <Copyright>iklevente</Copyright>
@@ -14,10 +14,13 @@
     <PackageIcon>jpgicon.jpg</PackageIcon>
     <RepositoryUrl>https://github.com/iklevente/VanguardDucker</RepositoryUrl>
     <RepositoryType>Open Source</RepositoryType>
+    <SignAssembly>false</SignAssembly>
+    <Version>1.2.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="jpgicon.jpg" />
+    <None Remove="logo.png" />
     <None Include="C:\Users\klevi\OneDrive\Desktop\Saved\LICENSE.txt">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
@@ -31,6 +34,10 @@
 
   <ItemGroup>
     <Folder Include="Resources\Images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="logo.png" />
   </ItemGroup>
 
 </Project>

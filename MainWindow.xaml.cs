@@ -133,11 +133,5 @@ namespace VanguardToggler
             string url = "https://github.com/iklevente";
             Process.Start(new ProcessStartInfo("cmd", $"/c start {url}") { CreateNoWindow = true });
         }
-
-        private void Hyperlink_Click2(object sender, RoutedEventArgs e)
-        {
-            string url = "https://paypal.me/iklevi";
-            Process.Start(new ProcessStartInfo("cmd", $"/c start {url}") { CreateNoWindow = true });
-        }
     }
 }

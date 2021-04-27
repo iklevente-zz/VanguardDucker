@@ -8,6 +8,12 @@ Download the latest release from the [Releases](https://github.com/iklevente/Van
 ## Material Design UI:
 ![Material Design GUI](https://raw.githubusercontent.com/iklevente/VanguardDucker/main/Resources/Images/AdminUI.PNG)
 
+## Buy me a coffee ☕:
+**Ko-fi:** https://ko-fi.com/iklevente
+
+**BTC:** 3BLDTSX8eiM7QmxQZ3fZhdtkJFxjK5tThs
+
+**XMR:** 897oVNnAbFuGmDBEDRkfY762CzMXk6gGxPaQXQaJj6WW5pw6p78w3Zk9LKEqLoy4FyjoNzPZ4xPD2UvgBVt9Nva9LjStfNM
 
 
-*This project is licensed under the MIT License. Made by Ilyó Kovács Levente.*
+*This project is licensed under the Apache License 2.0. Made by Ilyó Kovács Levente and the contributors.*

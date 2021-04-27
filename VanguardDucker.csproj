@@ -11,17 +11,21 @@
     <Copyright>iklevente</Copyright>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/iklevente/VanguardDucker</PackageProjectUrl>
-    <PackageIcon>jpgicon.jpg</PackageIcon>
+    <PackageIcon>logo.png</PackageIcon>
     <RepositoryUrl>https://github.com/iklevente/VanguardDucker</RepositoryUrl>
-    <RepositoryType>Open Source</RepositoryType>
+    <RepositoryType>GitHub repository</RepositoryType>
     <SignAssembly>false</SignAssembly>
-    <Version>1.2.0</Version>
+    <Version>1.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="jpgicon.jpg" />
     <None Remove="logo.png" />
-    <None Include="C:\Users\klevi\OneDrive\Desktop\Saved\LICENSE.txt">
+    <None Include="C:\Users\klevi\Desktop\Saved\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="Resources\Images\logo.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>

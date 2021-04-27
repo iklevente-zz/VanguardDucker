@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.ServiceProcess;
 using System.Security.Principal;
+using System;
 
 namespace VanguardToggler
 {
@@ -29,18 +30,6 @@ namespace VanguardToggler
         {
             InitializeComponent();
 
-            ServiceController vgk = new ServiceController("vgk");
-            if (vgk.Status == ServiceControllerStatus.Stopped)
-            {
-                toggler.IsChecked = false;
-                infoText.Text = "Vanguard  is disabled.";
-            }
-            else
-            {
-                toggler.IsChecked = true;
-                infoText.Text = "Vanguard is enabled.";
-            }
-
             if (File.Exists(vanguardPath + "\\vgtray.exe"))
             {
                 trayToggler.IsChecked = true;
@@ -51,7 +40,34 @@ namespace VanguardToggler
             }
             else
             {
-                infoText.Text= "Vanguard is not installed.";
+                infoText.Text= "Vanguard is not installed properly. (Vgktray cannot be found!)";
+                toggler.IsEnabled = false;
+                trayToggler.IsEnabled = false;
+                killVanguardButton.IsEnabled = false;
+                restartButton.IsEnabled = false;
+            }
+
+            ServiceController vgk = new ServiceController("vgk");
+            try
+            {
+                if (vgk.Status == ServiceControllerStatus.Stopped)
+                {
+                    toggler.IsChecked = false;
+                    infoText.Text = "Vanguard  is disabled.";
+                }
+                else
+                {
+                    toggler.IsChecked = true;
+                    infoText.Text = "Vanguard is enabled.";
+                }
+            }
+            catch (Exception)
+            {
+                infoText.Text = "Vanguard is not installed properly. (Vgk service cannot be found!)";
+                toggler.IsEnabled = false;
+                trayToggler.IsEnabled = false;
+                killVanguardButton.IsEnabled = false;
+                restartButton.IsEnabled = false;
             }
 
             if (!IsAdministrator())
@@ -131,6 +147,11 @@ namespace VanguardToggler
         private void Hyperlink_Click(object sender, RoutedEventArgs e)
         {
             string url = "https://github.com/iklevente";
+            Process.Start(new ProcessStartInfo("cmd", $"/c start {url}") { CreateNoWindow = true });
+        }
+        private void Hyperlink_Click2(object sender, RoutedEventArgs e)
+        {
+            string url = "https://ko-fi.com/iklevente";
             Process.Start(new ProcessStartInfo("cmd", $"/c start {url}") { CreateNoWindow = true });
         }
     }
